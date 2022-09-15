@@ -1,0 +1,31 @@
+--Create Fictional Store Database, including price and additional qualifiers.
+
+CREATE TABLE my_dvd_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, rating TEXT, items_sold INTEGER);
+
+INSERT INTO my_dvd_store VALUES (1, "The Office Boxset", 45.99, "NR", 22);
+INSERT INTO my_dvd_store VALUES (2, "Spiderman: Homecoming HD", 29.99, "PG-13", 35);
+INSERT INTO my_dvd_store VALUES (3, "Stranger than Fiction", 14.99, "PG-13", 18);
+INSERT INTO my_dvd_store VALUES (4, "Mr. Magorium's Wonder Emporium", 9.99, "G", 6);
+INSERT INTO my_dvd_store VALUES (5, "Edward Scissorhands", 14.99, "PG-13", 13);
+INSERT INTO my_dvd_store VALUES (6, "The Dark Knight", 14.99, "PG-13", 26);
+INSERT INTO my_dvd_store VALUES (7, "Return to Me", 9.99, "PG", 2);
+INSERT INTO my_dvd_store VALUES (8, "Wreck-It Ralph HD", 25.99, "PG", 20);
+INSERT INTO my_dvd_store VALUES (9, "Beetlejuice", 14.99, "PG", 29);
+INSERT INTO my_dvd_store VALUES (10, "Ponyo", 19.99, "G", 24);
+INSERT INTO my_dvd_store VALUES (11, "The Amityville Horror", 14.99, "R", 11);
+INSERT INTO my_dvd_store VALUES (12, "Office Space - Special Edition", 29.99, "R", 14);
+INSERT INTO my_dvd_store VALUES (13, "Fight Club", 14.99, "R", 21);
+INSERT INTO my_dvd_store VALUES (14, "Clerks", 9.99, "R", 17);
+INSERT INTO my_dvd_store VALUES (15, "X-Men: First Class", 19.99, "PG-13", 17);
+
+--Display the Store Database by Price
+SELECT * FROM my_dvd_store ORDER BY price desc;
+
+--Find Average Price of DVDs
+SELECT AVG(price) FROM my_dvd_store;
+--Refine Average Price search of the PG-13 DVDs
+SELECT AVG(price) FROM my_dvd_store WHERE rating="PG-13";
+
+--Find Most Popular Items Sold from DVD Store
+SELECT name, rating, items_sold FROM my_dvd_store ORDER BY items_sold desc limit 5; 
+
